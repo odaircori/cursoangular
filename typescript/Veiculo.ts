@@ -1,6 +1,6 @@
 export default class Veiculo {
     protected modelo: string
-    private velocidade: number = 0
+    protected velocidade: number = 0
 
     public acelerar(): void {
         this.velocidade = this.velocidade + 10
