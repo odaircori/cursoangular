@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { OfertasService } from '../ofertas.service'
 import { Oferta } from '../shared/oferta.model'
 import { Observable, Subject } from 'rxjs'
-import { switchMap } from 'rxjs/operators'
+import { switchMap, map } from 'rxjs/operators'
+import { Response } from '@angular/http'
 
 @Component({
   selector: 'app-home',
@@ -12,42 +13,19 @@ import { switchMap } from 'rxjs/operators'
 })
 export class HomeComponent implements OnInit {
 
-  public ofertas: Observable<Oferta[]>
-  private ofertasSubscription: Subject<Oferta[]> = new Subject<Oferta[]>()
-
+  public ofertas: Oferta[]
+ 
   constructor(private ofertasService: OfertasService) { 
-  }
-
-  public subOfertas(): void {
-    console.log('passou aqui')
-    this.ofertasSubscription.next()
   }
 
   ngOnInit() {
 
-    this.ofertas = this.ofertasSubscription
-    .pipe(
-      switchMap(
-        () => { 
-          console.log( this.ofertasService.getOfertas())
-          return this.ofertas =  this.ofertasService.getOfertas()
-          
-        }
-      )
-    )
+    this.ofertasService.getOfertas().subscribe(
+      (ofertas:Oferta[]) => {
+        this.ofertas = ofertas
+      }
+  
 
-    
-/*
-      .then(
-        ( ofertas: Oferta[]) => {
-          this.ofertas = ofertas
-        }
-      )
-
-      .catch(
-        ( param: any) => { console.log(param) }
-      )
-*/
   }
 
 }

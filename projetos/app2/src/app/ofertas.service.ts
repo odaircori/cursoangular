@@ -24,49 +24,40 @@ export class OfertasService {
 
     constructor(private http: Http){}
 
-    /*
-    public getOfertas(): Promise<Oferta[]> {
-        
-        return this.http.get(`${URL_API}?destaque=true`)
-            .toPromise()
-            .then((resposta: Response) =>  resposta.json() )
-
-    }
-
-  */
-
   public getOfertas(): Observable<Oferta[]> {
     return this.http.get(`${URL_API}?destaque=true`)
     .pipe(
-      map((resposta:Response) => resposta.json())
+      map((resposta:Response) =>  resposta.json())
     )
   }
 
-    public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
+    public getOfertasPorCategoria(categoria: string): Observable<Oferta[]> {
       
       return this.http.get(`${URL_API}?categoria=${categoria}`)
-        .toPromise()
-        .then((resposta: Response) => resposta.json())
-
+        .pipe(
+          map((resposta: Response) => resposta.json())
+        )
     }
 
-    public getOferta(id: number): Promise<Oferta>{
+    public getOferta(id: number): Observable<Oferta>{
 
       return this.http.get(`${URL_API}?id=${id}`)
-        .toPromise()
-        .then((resposta: Response) => resposta.json().shift())
+       .pipe(
+         map((oferta: Response) => oferta.json().shift())
+       )
     }
 
-    public getComoUsarOfertaPorId(id: number): Promise<string> {
+    public getComoUsarOfertaPorId(id: number): Observable<string> {
       return this.http.get(`${URL_API2}?id=${id}`)
-        .toPromise()
-        .then((resposta: Response) => resposta.json().shift().descricao)
+        .pipe(
+          map((resposta: Response) => resposta.json().shift().descricao))
     }
 
-    public getOndeficaOfertaPorId(id: number): Promise<string> {
+    public getOndeficaOfertaPorId(id: number): Observable<string> {
       return this.http.get(`${URL_API3}?id=${id}`)
-        .toPromise()
-        .then((resposta: Response) => resposta.json().shift().descricao)
+        .pipe(
+          map((resposta: Response) => resposta.json().shift().descricao)
+        )
     }
   
     public pesquisaOfertas(termo: string): Observable<Oferta[]> {

@@ -17,11 +17,11 @@ export class OndeFicaComponent implements OnInit {
   ngOnInit() {
     this.route.parent.params.subscribe(
       (parametro: Params) => {
-        console.log(parametro)
-        this.ofertasService.getOndeficaOfertaPorId(parametro.id)
-        .then((resposta: string) => {
-            this.ondeFica = resposta
-        })
+
+        this.ofertasService.getOndeficaOfertaPorId(parametro.id).subscribe(
+          (descricao:string) => this.ondeFica = descricao
+        )
+        
       }
     )
   }

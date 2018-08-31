@@ -22,17 +22,18 @@ export class OfertaComponent implements OnInit {
       (parametros: Params) => {
         parametros.id
 
-        this.ofertaService.getOferta(parametros.id) 
-        .then((ofertaIndividual: Oferta) => {
-          this.ofertaIndividual = ofertaIndividual
+        this.ofertaService.getOferta(parametros.id).subscribe(
+          (oferta: Oferta) => {
+            this.ofertaIndividual = oferta
+          } 
+        )
+        
         })        
       }
 
 
 
-    )
+    
 
 
   }
-    
-}

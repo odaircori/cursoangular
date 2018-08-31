@@ -13,13 +13,14 @@ export class DiversaoComponent implements OnInit {
 
   public diversao: Oferta[]
 
-  constructor(private ofertaService: OfertasService) { }
+  constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-    this.ofertaService.getOfertasPorCategoria('diversao')
-      .then((ofertas: Oferta[]) => {
-          return this.diversao = ofertas
+    this.ofertasService.getOfertasPorCategoria('diversao').subscribe(
+      ((ofertaCategoria: Oferta[]) => {
+          this.diversao = ofertaCategoria
       })
+    )
   }
 
 }
