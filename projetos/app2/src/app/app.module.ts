@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
+//import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { ROUTES } from './app.routes'
 
@@ -21,7 +23,12 @@ import { DescricaoReduzida } from './util/descricao-reduzida.pipe'
 //currency pt-Br
 import localept from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
 registerLocaleData(localept, 'pt');
+
+//service
+import { CarrinhoService } from './carrinho.service'
 
 @NgModule({
   declarations: [
@@ -34,15 +41,19 @@ registerLocaleData(localept, 'pt');
     OfertaComponent,
     ComoUsarComponent,
     OndeFicaComponent,
-    DescricaoReduzida
+    DescricaoReduzida,
+    OrdemCompraComponent,
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    //FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "pt" }
+    { provide: LOCALE_ID, useValue: "pt-Br" }, CarrinhoService
   ],
   bootstrap: [AppComponent]
 })

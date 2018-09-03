@@ -39,7 +39,7 @@ public limpaPesquisa(){
        if(termo.trim() === '') {
          return of<Oferta[]>([])
        }
-       console.log(termo)
+       
         return this.ofertasService.pesquisaOfertas(termo)
        
       }),

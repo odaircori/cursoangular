@@ -24,6 +24,8 @@ export class OndeFicaComponent implements OnInit {
         
       }
     )
+
+  
   }
 
 }
