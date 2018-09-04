@@ -5,6 +5,7 @@ import { OrdemCompraService } from '../ordem-compra.service'
 import { CarrinhoService } from '../carrinho.service'
 
 import { Pedido } from '../shared/pedido.model'
+import { ItemCarrinho } from '../shared/item-carrinho.model'
 
 
 @Component({
@@ -24,13 +25,17 @@ export class OrdemCompraComponent implements OnInit {
 
   public idPedidoCompra: number
 
+  public itensCarrinho:ItemCarrinho[]
 
   constructor(private ordemCompraService: OrdemCompraService, private carrinhoService: CarrinhoService) {
 
    }
 
   ngOnInit() {
-    console.log(this.carrinhoService.exibirItens())
+
+    this.itensCarrinho = this.carrinhoService.exibirItens()
+
+    console.log(this.itensCarrinho)
   }
 
   public confirmarCompra(): void {

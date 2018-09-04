@@ -244,6 +244,13 @@
       "complemento": "Sala 510",
       "formaPagamento": "debito",
       "id": 9
+    },
+    {
+      "endereco": "zzzz",
+      "numero": "ss",
+      "complemento": null,
+      "formaPagamento": "dinheiro",
+      "id": 10
     }
   ]
 }
