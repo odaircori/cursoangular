@@ -187,70 +187,99 @@
   ],
   "pedidos": [
     {
-      "id": 1
-    },
-    {
-      "endereco": "abcd",
-      "numero": "1234",
-      "complemento": "",
-      "formaPagamento": "dinheiro",
-      "id": 2
-    },
-    {
-      "endereco": "Abcd",
-      "numero": "123",
-      "complemento": "Ap 202",
-      "formaPagamento": "debito",
-      "id": 3
-    },
-    {
-      "endereco": "Alameda Prefeito Claudio Moacir de Azevedo",
-      "numero": "55",
-      "complemento": "AP 202",
-      "formaPagamento": "debito",
-      "id": 4
-    },
-    {
-      "endereco": "Rua Teste",
-      "numero": "123",
-      "complemento": "CAsa",
-      "formaPagamento": "debito",
-      "id": 5
-    },
-    {
-      "endereco": "Rua 2",
-      "numero": "10",
-      "complemento": "Casa",
-      "formaPagamento": "dinheiro",
-      "id": 6
-    },
-    {
-      "endereco": "Rua 3",
-      "numero": "1-",
-      "complemento": "sdf",
-      "formaPagamento": "dinheiro",
-      "id": 7
-    },
-    {
-      "endereco": "Rua do Sol",
-      "numero": "136",
-      "complemento": "Casa",
-      "formaPagamento": "dinheiro",
-      "id": 8
-    },
-    {
-      "endereco": "Av Nossa Senhora da Glória",
-      "numero": "1181",
-      "complemento": "Sala 510",
-      "formaPagamento": "debito",
-      "id": 9
-    },
-    {
       "endereco": "zzzz",
       "numero": "ss",
       "complemento": null,
       "formaPagamento": "dinheiro",
+      "pedido": [],
       "id": 10
+    },
+    {
+      "endereco": "Al. Prefeito Claudio Moacyr de Azevedo",
+      "numero": "55",
+      "complemento": "AP 202",
+      "formaPagamento": "debito",
+      "pedido": [
+        {
+          "id": 4,
+          "img": {
+            "url": "/assets/ofertas/4/img1.jpg"
+          },
+          "titulo": "Estância das águas",
+          "descricao_oferta": "Diversão garantida com piscinas, trilhas e muito mais.",
+          "valor": 31.9,
+          "quantidade": 1
+        },
+        {
+          "id": 6,
+          "img": {
+            "url": "/assets/ofertas/6/img1.jpg"
+          },
+          "titulo": "Academia de tiro",
+          "descricao_oferta": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
+          "valor": 89.9,
+          "quantidade": 1
+        },
+        {
+          "id": 2,
+          "img": {
+            "url": "/assets/ofertas/2/img1.jpg"
+          },
+          "titulo": "Cozinha Mexicana",
+          "descricao_oferta": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+          "valor": 32.9,
+          "quantidade": 2
+        }
+      ],
+      "id": 11
+    },
+    {
+      "endereco": "Rua a",
+      "numero": "2",
+      "complemento": "Casa",
+      "formaPagamento": "dinheiro",
+      "pedido": [
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricao_oferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 3
+        }
+      ],
+      "id": 12
+    },
+    {
+      "endereco": "Rua Teste",
+      "numero": "123",
+      "complemento": "Casa",
+      "formaPagamento": "debito",
+      "pedido": [
+        {
+          "id": 6,
+          "img": {
+            "url": "/assets/ofertas/6/img1.jpg"
+          },
+          "titulo": "Academia de tiro",
+          "descricao_oferta": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
+          "valor": 89.9,
+          "quantidade": 1
+        },
+        {
+          "id": 5,
+          "img": {
+            "url": "/assets/ofertas/5/img1.jpg"
+          },
+          "titulo": "Kart",
+          "descricao_oferta": "Bateria de Kart de 30 minutos.",
+          "valor": 54.9,
+          "quantidade": 1
+        }
+      ],
+      "id": 13
     }
   ]
 }

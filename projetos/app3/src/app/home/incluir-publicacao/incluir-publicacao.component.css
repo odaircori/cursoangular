@@ -1,0 +1,12 @@
+.progresso {
+    height:25px;
+    width:100%; 
+    background: gray
+}
+
+.porcentagem {
+    background: rgb(73, 73, 255);
+    color: white;
+    font-weight:bold;
+    text-align:center
+}

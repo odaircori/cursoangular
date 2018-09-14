@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" *ngIf="progressoInclusao === 'pendente'">
+      <h3>Inclusão de Cervejaria</h3>
+      <div class="cervejaria-form" >
+        <form [formGroup]="formulario" (ngSubmit)="inserirCervejaria()">
+          <div class="form-group">
+            <label>Título</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Título" formControlName="titulo">
+          </div>
+          <div class="form-group">
+            <label>Descrição</label>
+            <textarea class="form-control" id="exampleFormControlInput2" placeholder="Digite uma descrição" rows="3" formControlName="descricao">
+              </textarea>
+          </div>
+          <div class="form-group">
+            <label>Endereço</label>
+            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Endereço" formControlName="endereco">
+          </div>
+          <div class="form-group">
+            <label>Imagem</label>
+            <input type="file" 
+                    class="form-control" 
+                    id="exampleFormControlInput4" 
+                    placeholder="Selecione uma imagem" 
+                    formControlName="imagem" 
+                    (change)="preparaImagemUpload($event)"
+                    accept="image/*" >
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Inserir</button>
+          </div>          
+        </form>
+      </div>
+    </div>
+
+    <!--Inclusão em Andamento-->
+    <div class="col-sm-12" *ngIf="progressoInclusao === 'andamento'">
+        <h3>Inclusão de Cervejaria</h3>
+        <div class="cervejaria-form" >
+          {{porcentagem}}%
+        </div>
+      </div>
+      
+<!--Inclusão Concluída-->      
+      <div class="col-sm-12" *ngIf="progressoInclusao === 'concluido'">
+          <h3>Inclusão de Cervejaria</h3>
+          <div class="cervejaria-form" >
+            <p>Cervejaria cadastrada com sucesso!!!</p>
+          </div>
+        </div>      
+  </div>
+</div>
